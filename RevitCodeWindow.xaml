@@ -1,0 +1,19 @@
+<Window x:Class="LittleHelper.RevitCodeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Revit API Code" 
+        Height="300" 
+        Width="500"
+        Background="#1D1A26">
+    <Grid>
+        <TextBox x:Name="RevitCodeTextBox"
+                 Margin="10"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                 IsReadOnly="True"
+                 Background="#2C2C2E"
+                 Foreground="White"
+                 FontFamily="Consolas" />
+    </Grid>
+</Window>

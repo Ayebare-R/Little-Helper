@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework> <!-- Update to a modern .NET version if desired -->
+    <UseWPF>true</UseWPF>
+    <RootNamespace>LittleHelper</RootNamespace>
+    <AssemblyName>LittleHelper</AssemblyName>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup>
+  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+</PropertyGroup>
+
+  <ItemGroup>
+    <!-- Manually include specific references not automatically resolved -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2024\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2024\RevitAPIUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Include custom files -->
+    <None Include="Addin\LittleHelper.addin" />
+    <None Include="packages.config" />
+    <Content Include="CuteRobo_32x32.png" />
+  </ItemGroup>
+
+    <!-- Post-build step to copy the DLL and .addin to Revit's Addins folder -->
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(TargetDir)\LittleHelper.dll" 
+          DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2024" 
+          OverWriteReadOnlyFiles="true" />
+
+    <Copy SourceFiles="Addin\LittleHelper.addin"
+          DestinationFolder="C:\ProgramData\Autodesk\Revit\Addins\2024"
+          OverWriteReadOnlyFiles="true" />
+  </Target>
+
+</Project>
