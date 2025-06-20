@@ -13,6 +13,6 @@ An Autodesk Revit plugin integrating OpenAI to convert BIM requests into executa
 - Maintains conversation history for coherent interactions
 
 ## 🛠️ Installation
-1. Add OpenAI API key to `ChatGPTService.cs`
+1. Add OpenAI API key to your .env so that it can be accessed by `ChatGPTService.cs`
 2. Build with .NET 4.8 & Revit 2024+
 3. Deploy DLL to `%APPDATA%\Autodesk\Revit\Addins\2024`
