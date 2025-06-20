@@ -4,20 +4,13 @@
 An Autodesk Revit plugin integrating OpenAI to convert BIM requests into executable API commands through conversational AI.
 
 ## 🚀 Key Features
-- **AI-Powered BIM Assistant**: Understands requests like _"Create a 10m concrete wall at origin with 3 windows"_
-- **Smart Command Generation**: Creates validated JSON commands for Revit API operations
-- **Interactive Dialogue**: Requests missing parameters through conversation
-- **One-Click Execution**: Instantly creates Revit elements (walls currently supported)
-- **Code Inspection**: View generated API commands before execution
-- **Unit Conversion**: Automatic metric (meters) to Revit internal units
+- Understands basic user requests like _ "Create a 10m concrete wall at origin"
+- Creates a valid JSON commad for Revit API integration
+- If there are missing paramerters, it requests for them through conversation
+- Passes the instruction to the Revit API for execution
 
 ## ⚙️ Technical Highlights
-- **Context-Aware**: Maintains conversation history for coherent interactions
-- **Validation Pipeline**:  
-  ✓ JSON schema verification  
-  ✓ Mandatory field checks  
-  ✓ Parameter integrity validation
-- **Token Optimization**: Auto-truncates long conversations (3500 token limit)
+- Maintains conversation history for coherent interactions
 
 ## 🛠️ Installation
 1. Add OpenAI API key to `ChatGPTService.cs`
